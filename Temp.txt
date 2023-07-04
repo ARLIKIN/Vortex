@@ -1,0 +1,14 @@
+appid: "1245620"
+headerImage: "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg"
+smallImage: "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/capsule_184x69.jpg"
+title: "ELDEN RING"
+url: "https://store.steampowered.com/app/1245620"
+
+
+
+
+<div class="GameBlock"> </div>
+<div id="1" onclick="OpenGame()"><img id="1_img" class="GameIMG" src="" alt=""><p id="1_p" class="GameP">Elden Ring</p></div>
+
+
+
