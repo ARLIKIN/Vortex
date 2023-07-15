@@ -56,7 +56,7 @@ var GetRecomendGames = function()
     "special_categories": [],
     "onlySpecials": false,
     "maxprice": -1,
-    "cc": "",
+    "cc": "us",
     "deck_compatibility": [], //2=Verified & 3=Playable
     "os": [], //win, mac, linux
     "supportedlang": [],
@@ -79,7 +79,7 @@ var OpenPageGame = function(id)
 {
   var idData = {
     appid:id,
-    cc:'russian'
+    cc:'us'
   }
 
   steam.getByID(idData,function(data){CreateNewPage(data)})
