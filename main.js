@@ -10,7 +10,7 @@ function createWindow () {
     width: 1200,
     height: 800,
     title:'Vortex',
-    backgroundColor:'#333250',
+    backgroundColor:'#051a27',
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -21,7 +21,7 @@ function createWindow () {
   // and load the index.html of the app.
   // и загрузите index.html приложения.
   
-  mainWindow.loadFile('HTML/General.html');
+  mainWindow.loadFile('HTML/MainScreen.html');
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

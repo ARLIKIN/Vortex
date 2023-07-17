@@ -25,10 +25,10 @@ function InitScreenshot()
 
 function InitPage()
 {
-  data = JSON.parse(fs.readFileSync('data.txt','utf8'));
+  data = JSON.parse(fs.readFileSync('data.txt','utf8')); // Вся информация по игре
   User_Lib = JSON.parse(fs.readFileSync('Lib_user.json','utf8'));
   
-  for(key in User_Lib)
+  for(key in User_Lib)  // есть ли игра в библиотеке
   {
     if(key == data.name)
     {
@@ -82,6 +82,12 @@ function InitPage()
     if(i != data.genres.length-1)
     strGenres += ',';
   }
+
+  Byid('metacritic_btn').onclick = function()
+  {
+    require("electron").shell.openExternal(data.metacritic.url);
+  }
+
   Byid('genres').textContent = strGenres;
 
   //Описание игры
@@ -108,15 +114,9 @@ function InitPage()
 
 
   //Минимальные системные требования
-  Byid('SystemRec').innerHTML = data.pc_requirements.minimum; 
+  Byid('SystemRecMin').innerHTML = data.pc_requirements.minimum;
   if(data.pc_requirements.recommended)
-  Byid('SystemRec').innerHTML += data.pc_requirements.recommended
-
-  //Стиль фона
-  document.body.style = 'background: url('+data.background+') top center;';
-
-  Byid('backgIMG').style = 'background: linear-gradient(to bottom,#333250bb 30%, #333250d3 10% ,#333250fb 65%);';
-  
+  Byid('SystemRecMax').innerHTML += data.pc_requirements.recommended  
 }
 
 InitPage();
