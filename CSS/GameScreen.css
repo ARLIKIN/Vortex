@@ -1,0 +1,440 @@
+html,
+body {
+  height: 100%;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Unbounded', cursive;
+    background: '#051a27';
+    background-repeat: no-repeat;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+p
+{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+img
+{
+    border-radius: 10px;
+}
+
+.main_div
+{
+    background-image: url('../img/GamePageGradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    justify-content: center;
+}
+
+.Center_div
+{
+    width: 1200px;
+    text-align: center;
+}
+
+/*Menu*/
+.menu_div
+{
+    height: 55px;
+    border-radius: 94px;
+    background: rgba(7, 26, 33, 0.69);
+    
+
+}
+
+.menu_ul
+{
+    padding: 0;
+    display: flex;
+    margin: auto 0;
+    list-style-type: none;
+    padding-top: 16px;
+    justify-content: space-around;
+}
+
+.Menu_Item
+{
+    color: #82818A;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Menu_Item:hover
+{
+    background: linear-gradient(90deg, #1A9DFC 0%, #1A83D1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom:2px solid#1A9FFF;
+    
+}
+
+.Menu_Item:focus-visible
+{
+    outline: none;
+}
+
+.icon
+{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: linear-gradient(90deg, #063B4F 0%, rgba(26, 157, 252, 0.85) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -8px;
+}
+
+/*Game*/
+
+.head
+{
+    margin-top: 27px;
+    margin-bottom: 27px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.container
+{
+    width: 600px;
+}
+
+.video
+{
+    width: 600px;
+    height: 338px;
+    border-radius: 10px;
+}
+
+
+
+.screen
+{
+    width: 600px;
+    height: 338px; /*338*/
+    border-radius: 10px;
+}
+
+/*About*/
+
+.about_fon1
+{
+    width: 41.5%;
+    border-radius: 20px;
+    border: 1px solid #133E5F;
+    background: linear-gradient(360deg, rgba(0, 42, 64, 0.70) 0%, rgba(6, 59, 79, 0.70) 100%);
+    padding-bottom: 5px;
+}
+
+.about_fon2
+{
+    width: 96.4%;
+    border-radius: 20px;
+    height: 95%;
+    background: linear-gradient(180deg, rgba(27, 99, 152, 0.70) 0%, rgba(26, 107, 150, 0.30) 100%);
+    margin-left: 0.5em;
+    margin-top: 0.6em;
+    padding-bottom: 5px;
+}
+
+.aboutIMG
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about
+{
+    text-align: left;
+    margin-left: 3%;
+    font-size: 12pt;
+}
+
+#header_image
+{
+    width: 80%;
+    border-radius: 10px;
+    margin-left: 8%;
+    margin-top: 5px;
+}
+
+#All_genres
+{
+    padding-top: 5px;
+    display: flex;
+}
+
+.metacritic
+{
+    padding-top: 5px;
+    display: flex;
+    cursor: pointer;
+}
+
+/*Torrent and BTN Dowloand libary*/
+
+.Torrent_fon1
+{
+    border-radius: 10px;
+    border: 1px solid #133E5F;
+    background: linear-gradient(180deg, rgba(8, 52, 75, 0.70) 0%, rgba(18, 62, 79, 0.70) 100%);
+    margin-top: 22px;
+    margin-bottom: 33px;
+    padding: 10px;
+}
+
+.Torrent_fon2
+{
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(27, 99, 152, 0.70) 0%, rgba(26, 107, 150, 0.70) 100%);
+    padding: 10px;
+}
+
+.Torrent
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#TableTorrents
+{
+    color: white;
+}
+
+.GameABOUT
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.GameABOUT_fon1
+{
+    border-radius: 10px;
+    border: 1px solid #133E5F;
+    background: linear-gradient(180deg, rgba(8, 52, 75, 0.70) 0%, rgba(18, 62, 79, 0.70) 100%);
+    padding: 10px;
+}
+
+.GameABOUT_fon2
+{
+    width: 98%;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(27, 99, 152, 0.70) 0%, rgba(26, 107, 150, 0.70) 100%);
+    padding: 10px;
+}
+
+.GameABOUT_text
+{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#GeneralABOUT
+{
+    text-align: left;
+    color: white;
+    padding-left: 10px;
+}
+
+
+.GeneralABOUT
+{
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 70%;
+}
+
+.LocCat
+{
+    padding-left: 5px;
+}
+
+.Categori
+{
+    border-radius: 10px;
+    border: 1px solid #133E5F;
+    background: linear-gradient(180deg, rgba(8, 52, 75, 0.70) 0%, rgba(18, 62, 79, 0.70) 100%);
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#categories_div
+{
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(27, 99, 152, 0.70) 0%, rgba(26, 107, 150, 0.70) 100%);
+    padding: 10px;
+}
+
+#categories
+{
+    text-align: left;
+}
+
+.Language_fon
+{
+    border-radius: 10px;
+    border: 1px solid #133E5F;
+    background: linear-gradient(180deg, rgba(8, 52, 75, 0.70) 0%, rgba(18, 62, 79, 0.70) 100%);
+    padding: 10px;
+}
+
+#supported_languages_div
+{
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(27, 99, 152, 0.70) 0%, rgba(26, 107, 150, 0.70) 100%);
+}
+
+#supported_languages
+{
+    text-align: left;
+}
+
+.SystemRec_fon1
+{
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #133E5F;
+    background: linear-gradient(180deg, rgba(8, 52, 75, 0.70) 0%, rgba(18, 62, 79, 0.70) 100%);
+}
+
+.SystemRec_fon2
+{
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(27, 99, 152, 0.70) 0%, rgba(26, 107, 150, 0.70) 100%);
+}
+
+
+.SystemRec
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    margin-top: 20px;
+    color: white;
+}
+
+.SystemRecbox
+{
+    text-align: left;
+    border-radius: 5px;
+    background: rgba(10, 49, 73, 0.70);
+    padding: 10px;
+}
+
+#SystemRecMin
+{
+    margin-right: 5px;
+}
+
+
+#TableTorrents
+{
+    width: 100%;
+}
+
+.TableStroka
+{
+    border: 1px solid rgba(97, 97, 97, 0.692);
+}
+
+.TableTitle
+{
+    text-align: left;
+}
+
+.TablePeers
+{
+    color: rgb(185, 104, 12);
+}
+.TableSeed
+{
+    color: greenyellow;
+}
+
+.TableLink
+{
+    text-decoration: underline;
+    color: #3a98c0;
+}
+
+.TableDowloand
+{
+    color: #d2efa9;
+    text-decoration: underline;
+}
+
+
+
+#BTNDowloand
+{
+    padding-top: 8px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    border-radius: 0.3em;
+    border: 1px solid #133E5F;
+    background: linear-gradient(90deg, #2A79A3 0%, #093F56 99.50%);
+    color: #FFF;
+    font-family: Unbounded;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: background 0.5s ease;
+}
+
+#BTNDowloand:hover
+{
+    background: linear-gradient(270deg, #2A79A3 0%, #093F56 99.50%);
+}
+
+#Lib_button
+{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 0.3em;
+    margin-left: 5px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #1A6B96 12.30%, #004765 95.83%);
+}
+
+#img_lib_button
+{
+    position: relative;
+    top: 17%;
+    /* left: 1%; */
+    /* width: 21px; */
+    /* height: 28px; */
+}
+
+#Lib_button:hover
+{
+    background: linear-gradient(270deg, #1A6B96 12.30%, #004765 95.83%);
+}

@@ -23,7 +23,7 @@ var PaintElement = function(data)
       if(i!=0){GameDiv += '</div>';}
       GameDiv += '<div class="GameBlock">';
     }
-    GameDiv += '<div id="Obj:' + data[i].appid+'"><img id="'+data[i].appid+'_img" class="GameIMG" src="'+data[i].headerImage+'" alt="'+data[i].smallImage
+    GameDiv += '<div id="Obj:' + data[i].appid+'">><img id="'+data[i].appid+'_img" class="GameIMG" src="'+data[i].headerImage+'" alt="'+data[i].smallImage
     +'"><p id="'+data[i].appid+'_p" class="GameP">'+data[i].title+'</p></div>'
   }
   if(data.length %3 ==0)
@@ -56,7 +56,7 @@ var GetRecomendGames = function()
     "special_categories": [],
     "onlySpecials": false,
     "maxprice": -1,
-    "cc": "",
+    "cc": "us",
     "deck_compatibility": [], //2=Verified & 3=Playable
     "os": [], //win, mac, linux
     "supportedlang": [],
@@ -79,7 +79,7 @@ var OpenPageGame = function(id)
 {
   var idData = {
     appid:id,
-    cc:'russian'
+    cc:'us'
   }
 
   steam.getByID(idData,function(data){CreateNewPage(data)})
@@ -89,9 +89,9 @@ var OpenPageGame = function(id)
       //console.log(FinalHTML);
       console.log(data);
       fs.writeFileSync('data.txt',JSON.stringify(data));
-      var sample =  fs.readFileSync('HTML/Temp_0.txt','utf-8');
-      fs.writeFileSync('HTML/Temp_2.html',sample);
-      document.location.href = "Temp_2.html"; 
+      //var sample =  fs.readFileSync('HTML/Temp_0.txt','utf-8'); //Неизвестно зачем это было написано удалить после тестов
+      //fs.writeFileSync('HTML/Temp_2.html',sample);
+      document.location.href = "GameScreen.html"; 
     }
 }
 GetRecomendGames();
@@ -102,7 +102,7 @@ var SearchBTN = function()
   var ReqestGame = Byid('text-field__input').value;
   if(ReqestGame == '')
   {
-    document.location.href = "General.html"; 
+    document.location.href = "MainScreen.html"; 
     
   }
 
@@ -117,7 +117,7 @@ var SearchBTN = function()
     "special_categories": [],
     "onlySpecials": false,
     "maxprice": -1,
-    "cc": "",
+    "cc": "us",
     "deck_compatibility": [], //2=Verified & 3=Playable
     "os": [], //win, mac, linux
     "supportedlang": [],
