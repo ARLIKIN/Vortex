@@ -278,7 +278,6 @@ img
     border: 1px solid #133E5F;
     background: linear-gradient(180deg, rgba(8, 52, 75, 0.70) 0%, rgba(18, 62, 79, 0.70) 100%);
     padding: 10px;
-    margin-bottom: 5px;
 }
 
 #categories_div
@@ -299,6 +298,7 @@ img
     border: 1px solid #133E5F;
     background: linear-gradient(180deg, rgba(8, 52, 75, 0.70) 0%, rgba(18, 62, 79, 0.70) 100%);
     padding: 10px;
+    margin-top: 5px;
 }
 
 #supported_languages_div
