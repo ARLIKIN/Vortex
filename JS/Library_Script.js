@@ -3,9 +3,24 @@ const TorrentSearchApi = require('torrent-search-api');
 TorrentSearchApi.enableProvider('Torrent9');
 TorrentSearchApi.enableProvider('1337x');
 TorrentSearchApi.enableProvider('ThePirateBay'); // использовать magnit
+const dialog = require('node-file-dialog')
 const fs = require('fs');
+const { execFile } = require('child_process');
+const { time } = require('console');
+const { title } = require('process');
 var TorrentsFiles;
 var User_Lib;
+var NameTitle;
+
+
+function InitScreenshot()
+{
+  const $slider = document.querySelector('[data-slider="chiefslider"]');
+    const slider = new ChiefSlider($slider, {
+      loop: false
+    });
+}
+
 
 function InitLib()
 {
@@ -14,13 +29,13 @@ function InitLib()
     {
         Byid('Content_Game').innerHTML = '<h1>У вас нет игр</h1>';
         Byid('Content_Game').style = 'text-align: center; margin-top: 50px;'
-        Byid('Head_Game_Lib').innerHTML = '';
+        //Byid('Head_Game_Lib').innerHTML = ''; удалена шапака
         return;
     }
 
     for(key in User_Lib)
     {
-        Byid('Games_lib').innerHTML += '<div id="'+key+'" class="Game"><img class="Game_img" src="'+User_Lib[key].header_image+'" alt=""><p>'+key+'</p></div>';
+        Byid('Games_lib').innerHTML += '<div id="'+key+'" class="Game"><img class="Game_img" src="'+User_Lib[key].header_image+'" alt=""><p class="Game_text">'+key+'</p></div>';
     }
 
     for(key in User_Lib)
@@ -29,11 +44,15 @@ function InitLib()
     }
 
     NewGameLib(Object.keys(User_Lib)[0]);
+    InitScreenshot()
 }
 
 function NewGameLib(title)
 {
     Byid('20Torrents').innerHTML = '';
+    Byid('Torrent_fon1').hidden = true;
+    Byid('Torrent_fon2').hidden = true;
+    NameTitle = title
     try
     {
       Byid('HeadIMG').style= "background-image: url('"+User_Lib[title].background_raw+"');" 
@@ -61,6 +80,26 @@ function NewGameLib(title)
     }else
     {
         Byid('PCrecomend_max').innerHTML = '';
+    }
+
+    if(User_Lib[title].path != "")
+    Byid('Setting').textContent = '✓'
+
+    //Видео
+    Byid('slider_items').innerHTML = '';
+    var OnePart = '<div class="slider__item"><div class="slider__item-container"><div class="slider__item-content">';
+    var TwoPart = '</div></div></div>';
+    if(User_Lib[title].movies)
+    for(var i =0; i < User_Lib[title].movies.length; i++)
+    {
+      Byid('slider_items').innerHTML += OnePart +'<video class="video" controls="" name="media" src="'+ User_Lib[title].movies[i].mp4.max +'"></video>'+ TwoPart;
+    }
+
+    //Скриншоты
+    if(User_Lib[title].screenshots)
+    for(var i =0; i < User_Lib[title].screenshots.length; i++)
+    {
+      Byid('slider_items').innerHTML += OnePart +'<img class="screen" src="'+ User_Lib[title].screenshots[i].path_full+'" alt="">'+ TwoPart;
     }
     
 }
@@ -112,6 +151,9 @@ Byid('BTNDowloand').onclick = function()
         }
         
         console.log(torrents);
+
+        Byid('Torrent_fon1').hidden = false;
+        Byid('Torrent_fon2').hidden = false;
     }
 
     function DowloandTorrentFile()
@@ -178,5 +220,39 @@ Byid('BTNDowloand').onclick = function()
     }    
 
 
+Byid('BTNPlay').onclick = function()
+{
+    var path = User_Lib[NameTitle].path;
+    if(path != "")
+    {
+      const child = execFile(path, [], (error, stdout, stderr) => {
+        if (error) {
+          throw error;
+        }
+        console.log(stdout);
+      });
+    }else
+    {
+      alert("Настройте запуск");
+    }
+}
+
+Byid('Setting').onclick = function()
+{
+  function Lib(dir)
+  {
+    User_Lib[NameTitle].path = dir;
+    fs.writeFileSync('Lib_user.json',JSON.stringify(User_Lib));
+    Byid('Setting').textContent = '✓'
+  }
+
+  const config={type:'open-file'}
+  dialog(config)
+    .then(dir => Lib(dir[0]))
+    .catch(err => alert(err))
+}
+
+
+//✓⋮
 
 

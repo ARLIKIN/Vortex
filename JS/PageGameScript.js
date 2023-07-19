@@ -255,6 +255,9 @@ Byid('BTNDowloand').onclick = function()
         User_Lib[data.name]["publishers"] = data.publishers;
         User_Lib[data.name]["pc_requirements"] = data.pc_requirements;
         User_Lib[data.name]["background_raw"] = data.background_raw;
+        User_Lib[data.name]["movies"] = data.movies;
+        User_Lib[data.name]["screenshots"] = data.screenshots;
+        User_Lib[data.name]["path"] = "";
         Byid('img_lib_button').src = '../img/Lib_button_saved.svg';
         Games_Lib = true;
       }
