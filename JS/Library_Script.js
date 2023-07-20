@@ -16,6 +16,7 @@ var NameTitle;
 //инициализация 
 function InitLib()
 {
+  
     User_Lib =  JSON.parse(fs.readFileSync('Lib_user.json','utf8'));
     if(Object.keys(User_Lib).length ==0)
     {
@@ -37,6 +38,8 @@ function InitLib()
 
     NewGameLib(Object.keys(User_Lib)[0]);
     InitScreenshot();
+    
+    Byid('General_block').style.display = 'flex';
 }
 //обработка открытия страницы
 function NewGameLib(title)
@@ -240,7 +243,7 @@ Byid('BTNDowloand').onclick = function()
       }
 
       NameFile += '.torrent';
-      fs.writeFileSync(NameFile,buffer);
+      fs.writeFileSync('./Downloads/'+NameFile,buffer);
     }else
     {
       const magnet = TorrentsFiles[id].magnet;

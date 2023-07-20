@@ -23,7 +23,7 @@ var PaintElement = function(data)
       if(i!=0){GameDiv += '</div>';}
       GameDiv += '<div class="GameBlock">';
     }
-    GameDiv += '<div id="Obj:' + data[i].appid+'">><img id="'+data[i].appid+'_img" class="GameIMG" src="'+data[i].headerImage+'" alt="'+data[i].smallImage
+    GameDiv += '<div id="Obj:' + data[i].appid+'"><img id="'+data[i].appid+'_img" class="GameIMG" src="'+data[i].headerImage+'" alt="'+data[i].smallImage
     +'"><p id="'+data[i].appid+'_p" class="GameP">'+data[i].title+'</p></div>'
   }
   if(data.length %3 ==0)
@@ -103,7 +103,6 @@ var SearchBTN = function()
   if(ReqestGame == '')
   {
     document.location.href = "MainScreen.html"; 
-    
   }
 
   var searchData = {

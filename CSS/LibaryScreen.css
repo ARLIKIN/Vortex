@@ -224,7 +224,12 @@ h1,h2,h3,h4,h5
 /*Game Screen*/
 
 .General_block
-{display: flex;height: 95%;justify-content: flex-start;}
+{
+    display: none;
+    height: 95%;
+    justify-content: flex-start;
+    
+}
 
 .Content_Game
 {

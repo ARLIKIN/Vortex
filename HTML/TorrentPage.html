@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/MainScreen.css">
+    <link rel="stylesheet" href="../CSS/TorrentPage.css">
 <title>Vortex</title>
 </head>
 <body>
@@ -23,14 +23,22 @@
                     <li class="Torrents_page"><a class="Menu_Item" href="TorrentPage.html">ТОРРЕНТ</a></li>
                 </ul>
             </div>
+            <div class="SearchFilter">
                 <div class="Search">
                     <div class="Search_fon"> 
                         <input class="text-field__input" id="text-field__input" type="text">
-                        <a class="Search_fon_btn" href="#" onclick="SearchBTN()" id="Search_li_buttton"><img class="Search_fon_btn_img" src="../img/Лупа.png" alt="Найти" width="29px" height="28"></a>
+                        <a class="Search_fon_btn" href="#" id="Search_li_buttton"><img class="Search_fon_btn_img" src="../img/Лупа.png" alt="Найти" width="29px" height="28"></a>
                     </div>    
                 </div>
+                <div class="filter">
+                    <p class="filter_text">Количество:</p>
+                    <input class="text-field__input" id="filter_input" value="40" type="number">
+                </div>
+            </div>
+                
+                
             <div id="Content_div" class="Content_div">
-                <svg viewBox="0 0 100 100">
+                <svg id="Load" viewBox="0 0 100 100">
                     <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
                     </filter>
@@ -97,12 +105,14 @@
                         </use>
                     </g>
                 </svg>
-                
-                
-                
+                <div id="Torrent_fon1" hidden>
+                    <div id="Torrent_fon2" hidden>
+                        <div id="20Torrents"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-   <script src="../JS/General_Script.js"></script> 
+   <script src="../JS/TorrentPage.js"></script> 
 </body>
 </html>
