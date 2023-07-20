@@ -239,7 +239,7 @@ Byid('BTNDowloand').onclick = function()
       }
 
       NameFile += '.torrent';
-      fs.writeFileSync(NameFile,buffer);
+      fs.writeFileSync('./Downloads/'+NameFile,buffer);
     }else
     {
       const magnet = TorrentsFiles[id].magnet;

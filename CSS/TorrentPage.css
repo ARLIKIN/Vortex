@@ -1,0 +1,262 @@
+html,
+body {
+  height: 100%;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Unbounded', cursive;
+    background: '#051a27';
+    background-repeat: no-repeat;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+p,h1,h2,h3,h4
+{
+    padding: 0;
+    margin: 0;
+}
+
+.main_div
+{
+    background-image: url('../img/FonPageDowloand.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.Center_div
+{
+    width: 1200px;
+    text-align: center;
+}
+
+/*Menu*/
+.menu_div
+{
+    height: 55px;
+    border-radius: 94px;
+    background: rgba(7, 26, 33, 0.69);
+    
+
+}
+
+.menu_ul
+{
+    padding: 0;
+    display: flex;
+    margin: auto 0;
+    list-style-type: none;
+    padding-top: 16px;
+    justify-content: space-around;
+}
+
+.Menu_Item
+{
+    color: #82818A;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Menu_Item:hover
+{
+    background: linear-gradient(90deg, #1A9DFC 0%, #1A83D1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom:2px solid#1A9FFF;
+    
+}
+
+.icon
+{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: linear-gradient(90deg, #063B4F 0%, rgba(26, 157, 252, 0.85) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -8px;
+}
+
+/*Search*/
+.SearchFilter
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+    margin-bottom: 55px;
+}   
+
+
+.Search
+{
+    display: flex;
+    justify-content: center;
+}
+
+.Search_fon
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 450px;
+    height: 41px;
+    border-radius: 12px;
+    background: rgba(7, 26, 33, 0.80);
+}
+.text-field__input
+{
+    width: 659px;
+    height: 32px;
+    border-radius: 12px;
+    background: #2C5362;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #FFF;
+    font-family: Unbounded;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 5px;
+    margin-left: 4px;
+}
+.text-field__input:focus-visible
+{
+    outline: none;
+}
+
+.Search_fon_btn
+{
+    width: 100px;
+    position: relative;
+}
+
+.Search_fon_btn_img
+{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/*Filter*/
+
+.filter
+{
+    width: 208px;
+    border-radius: 8px;
+    background: rgba(7, 26, 33, 0.80);
+    margin-left: 13px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.filter_text
+{
+    color: rgb(191, 219, 228);
+    font-family: Unbounded;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    user-select: none;
+    margin-top: 11px;
+}
+
+#filter_input
+{
+    width: 70px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /
+}
+
+
+
+
+/*Torrent*/
+
+#Torrent_fon1
+{
+    padding: 10px;
+    border-radius: 25px;
+    background: linear-gradient(360deg, #072530 0%, rgba(19, 58, 94, 0.52) 100%);
+}
+
+#Torrent_fon2
+{
+    padding: 10px;
+    border-radius: 25px;
+    background: linear-gradient(0deg, #124e64 0%, rgba(14, 44, 72, 0.79) 100%);
+}
+
+#TableTorrents
+{
+    width: 100%;
+    font-size: 0.8vw;
+    color: white;
+    text-align: center;
+}
+
+.TableStroka
+{
+    border: 1px solid rgba(97, 97, 97, 0.692);
+}
+
+.TableTitle
+{
+    text-align: left;
+}
+
+.TablePeers
+{
+    color: rgb(185, 104, 12);
+}
+.TableSeed
+{
+    color: greenyellow;
+}
+
+.TableLink
+{
+    text-decoration: underline;
+}
+
+.TableDowloand
+{
+    color: #d2efa9;
+    text-decoration: underline;
+}
+
+/*изображение загрузки*/
+svg{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	height:400px;
+	width: 400px;
+    display: none;
+    }
