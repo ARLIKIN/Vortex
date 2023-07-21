@@ -240,6 +240,7 @@ Byid('BTNDowloand').onclick = function()
 
       NameFile += '.torrent';
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
+      showPopup()
     }else
     {
       const magnet = TorrentsFiles[id].magnet;
@@ -248,6 +249,17 @@ Byid('BTNDowloand').onclick = function()
     }
     }
 
+    function showPopup() {
+      const popup = document.createElement('div');
+      popup.className = 'popup';
+      popup.textContent = 'Файл загружен';
+      document.body.appendChild(popup);
+    
+      setTimeout(() => {
+        document.body.removeChild(popup);
+      }, 2000);
+    
+    }
 
     Byid('Lib_button').onclick = function()
     {

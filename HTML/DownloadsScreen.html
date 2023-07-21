@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/DownloadsScreen.css">
+<title>Vortex</title>
+</head>
+<body onload="InitPage()">
+    <div class="main_div">
+        <div class="Center_div">
+            <div class="menu_div">
+                <ul class="menu_ul">
+                    <li class="icon">VORTEX</li>
+                    <li class="All_Games_li"><a class="Menu_Item" href="MainScreen.html">ВСЕ ИГРЫ</a></li>
+                    <li class="LIB_li"><a class="Menu_Item" href="LibaryScreen.html">БИБЛИОТЕКА</a></li>
+                    <li class="Dowloands_page"><a class="Menu_Item" href="DownloadsScreen.html">ЗАГРУЗКИ</a></li>
+                    <li class="Torrents_page"><a class="Menu_Item" href="TorrentPage.html">ТОРРЕНТ</a></li>
+                </ul>
+            </div>
+            <h3 class="headText">ЗАГРУЗКИ</h3>
+            <div id="Content_div" class="Content_div">
+                    
+                
+                <svg id="Load" viewBox="0 0 100 100">
+                    <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+                    </filter>
+                    <path id="figure8" fill="none" stroke="none" d="M 20 50 A 1 1 0 0 0 50 50 A 1 1 0 0 1 80 50 A 1 1 0 0 1 50 50 A 1 1 0 0 0 20 50" />
+                    <use href="#worm" filter="url(#blur)" />
+                    <g id="worm">
+                        <g opacity="0">
+                            <g id="c1" fill="none">
+                                <circle r="8" id="circle" />
+                                <animateMotion dur="5s" repeatCount="indefinite">
+                                    <mpath href="#figure8" />
+                                </animateMotion>
+                            </g>
+                        </g>
+                        <use href="#circle" fill="rgba(155,255,255,0.1)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.1s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.2)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.2s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.3)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.3s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.4)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.4s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.5)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.5s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.6)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.6s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.7)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.7s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.8)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.8s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,0.9)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-.9s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                        <use href="#circle" fill="rgba(155,255,255,1)">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="-1s">
+                                <mpath href="#figure8" />
+                            </animateMotion>
+                        </use>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+   <script src="../JS/DownloadsScreen.js"></script> 
+</body>
+</html>

@@ -41,6 +41,7 @@ function InitLib()
     
     Byid('General_block').style.display = 'flex';
 }
+
 //обработка открытия страницы
 function NewGameLib(title)
 {
@@ -244,6 +245,7 @@ Byid('BTNDowloand').onclick = function()
 
       NameFile += '.torrent';
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
+      showPopup();
     }else
     {
       const magnet = TorrentsFiles[id].magnet;
@@ -251,6 +253,19 @@ Byid('BTNDowloand').onclick = function()
       require("electron").shell.openExternal(magnet);
     }
     }    
+
+
+    function showPopup() {
+      const popup = document.createElement('div');
+      popup.className = 'popup';
+      popup.textContent = 'Файл загружен';
+      document.body.appendChild(popup);
+    
+      setTimeout(() => {
+        document.body.removeChild(popup);
+      }, 2000);
+    
+    }
 
 //Кнопки играть и настройка
 Byid('BTNPlay').onclick = function()
