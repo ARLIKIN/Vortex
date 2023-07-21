@@ -6,8 +6,10 @@ TorrentSearchApi.enableProvider('ThePirateBay'); // использовать mag
 const dialog = require('node-file-dialog')
 const fs = require('fs');
 const { execFile } = require('child_process');
-const { time } = require('console');
-const { title } = require('process');
+
+
+let currentImage = 0;
+
 var TorrentsFiles;
 var User_Lib;
 var NameTitle;
@@ -37,8 +39,6 @@ function InitLib()
     }
 
     NewGameLib(Object.keys(User_Lib)[0]);
-    InitScreenshot();
-    
     Byid('General_block').style.display = 'flex';
 }
 
@@ -92,27 +92,31 @@ function NewGameLib(title)
 
         if(User_Lib[title].path != "")
         Byid('Setting').textContent = '✓'
-
+        Byid('slides').innerHTML = ''
+        var check = false;
         //Видео
-        Byid('slider_items').innerHTML = '';
-        var OnePart = '<div class="slider__item"><div class="slider__item-container"><div class="slider__item-content">';
-        var TwoPart = '</div></div></div>';
         if(User_Lib[title].movies)
-        for(var i =0; i < User_Lib[title].movies.length; i++)
+        for(var i =0; i < User_Lib[title].movies.length && i<15; i++)
         {
-          Byid('slider_items').innerHTML += OnePart +'<video class="video" controls="" name="media" src="'+ User_Lib[title].movies[i].mp4.max +'"></video>'+ TwoPart;
+          if( i == 0){
+            Byid('slides').innerHTML +='<video class="video" controls="" name="media" src="'+ User_Lib[title].movies[i].mp4.max +'"class="visible"></video>';
+            check = true;
+            continue}
+          Byid('slides').innerHTML +='<video class="video" controls="" name="media" src="'+ User_Lib[title].movies[i].mp4.max +'"></video>'
         }
 
         //Скриншоты
         if(User_Lib[title].screenshots)
         for(var i =0; i < User_Lib[title].screenshots.length; i++)
         {
-          Byid('slider_items').innerHTML += OnePart +'<img class="screen" src="'+ User_Lib[title].screenshots[i].path_full+'" alt="">'+ TwoPart;
+          if(check){Byid('slides').innerHTML +='<img src="'+ User_Lib[title].screenshots[i].path_full+'"class="visible" alt="Hi"/>'; continue;}
+          Byid('slides').innerHTML +='<img src="'+ User_Lib[title].screenshots[i].path_full+'" alt="Hi"/>';
         }
-        Byid('Content_Video_Rec').hidden = false;
         Byid('release_date').hidden = false;
         Byid('vendor').hidden = false;
-        
+        Byid('slider').hidden = false;
+        Byid('PCrecomend').style.display = 'flex';
+        Slider();
     }
     // Добавленная игра
     function AnotherSource()
@@ -124,7 +128,8 @@ function NewGameLib(title)
       Byid('Setting').textContent = '✓';
       Byid('release_date').hidden = true;
       Byid('vendor').hidden = true;
-      Byid('Content_Video_Rec').hidden = true;
+      Byid('slider').hidden = true;
+      Byid('PCrecomend').style.display='none';
 
     }
 }
@@ -137,10 +142,7 @@ function OpenLibGame()
 // Слайдер изображений
 function InitScreenshot()
 {
-  const $slider = document.querySelector('[data-slider="chiefslider"]');
-    const slider = new ChiefSlider($slider, {
-      loop: false
-    });
+ 
 }
 
 //Кнопка загрузки
@@ -354,3 +356,31 @@ Byid('Game_fon_div').onclick = function()
 //✓⋮
 
 
+
+function Slider()
+{
+  var slider = document.querySelector('.slider');
+  var slidesContainer = slider.querySelector('.slides');
+  var slides = slidesContainer.querySelectorAll('img, video');
+  var prevButton = slider.querySelector('.prev');
+  var nextButton = slider.querySelector('.next');
+
+  let currentSlide = 0;
+
+  function showSlide(n) {
+    currentSlide = (n + slides.length) % slides.length;
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  prevButton.addEventListener('click', prevSlide);
+  nextButton.addEventListener('click', nextSlide);
+
+}
