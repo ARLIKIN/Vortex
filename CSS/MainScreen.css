@@ -17,6 +17,23 @@ a
     text-decoration: none;
 }
 
+
+
+
+body::-webkit-scrollbar { /*Полоса прокрутки*/
+    width: 7px;
+    border-radius: 4px;
+    background: #1D3644;
+    position: relative;
+}
+
+body::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
+    width: 5px;
+    height: 20px;
+    border-radius: 7px;
+    background: #1a7ba1;
+}
+
 .main_div
 {
     background-image: url('../img/FonGradient.png');

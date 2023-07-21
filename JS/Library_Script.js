@@ -93,6 +93,7 @@ function NewGameLib(title)
         if(User_Lib[title].path != "")
         Byid('Setting').textContent = '✓'
         Byid('slides').innerHTML = ''
+        Byid('slides').style.transform = "translateX(0%)"
         var check = false;
         //Видео
         if(User_Lib[title].movies)
