@@ -472,23 +472,13 @@ h1,h2,h3,h4,h5
 
 /*Video*/
 
-.Content_Video_Rec
-{
-    margin-top: 20px;
-}
 
-.VideoScrin
-{
-    width: 100%;
-}
 
 .video
 {
     width: 100%;
     border-radius: 10px;
 }
-
-
 
 .screen
 {
@@ -509,3 +499,44 @@ h1,h2,h3,h4,h5
     color: white;
     z-index: 1000;
 }
+
+/*Slider*/
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform .5s;
+  }
+  
+  .slides img, .slides video {
+    width: 100%;
+    border-radius: 15px;
+    
+  }
+  
+  .prev, .next {
+    background-color: rgba(0, 0, 0, .5);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 36px;
+    padding: 16px;
+    position: absolute;
+    top: calc(50% - (36px / 2));
+  }
+  
+  .prev {
+    left: 20px;
+  }
+  
+  .next {
+    right: 20px;
+  }
+  
+  

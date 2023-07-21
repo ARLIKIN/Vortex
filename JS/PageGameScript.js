@@ -52,7 +52,7 @@ function InitPage()
   var OnePart = '<div class="slider__item"><div class="slider__item-container"><div class="slider__item-content">';
   var TwoPart = '</div></div></div>';
   if(data.movies)
-  for(var i =0; i < data.movies.length; i++)
+  for(var i =0; i < data.movies.length && i<15; i++)
   {
     Byid('slider_items').innerHTML += OnePart +'<video class="video" controls="" name="media" src="'+ data.movies[i].mp4.max +'"></video>'+ TwoPart;
   }
