@@ -6,7 +6,7 @@ const { title } = require('process');
 
 TorrentSearchApi.enableProvider('Torrent9');
 TorrentSearchApi.enableProvider('1337x');
-TorrentSearchApi.enableProvider('ThePirateBay'); // использовать magnit
+TorrentSearchApi.enableProvider('ThePirateBay'); 
 TorrentSearchApi.enableProvider('TorrentProject'); 
 var TorrentsFiles;
 
@@ -24,6 +24,12 @@ function TestTorent()
 
 Byid('Search_li_buttton').onclick = function()
     {
+      SearchStart();
+    }
+
+
+    var SearchStart = function()
+    {
       var query = Byid('text-field__input').value;
       if(query == "") return;
       var category = 'All';
@@ -33,7 +39,6 @@ Byid('Search_li_buttton').onclick = function()
       Byid('Load').style.display = "block";
       searchTorrent(query,category,countResult);
     }
-
 
 async function searchTorrent(query,category,size)
 {
@@ -128,6 +133,7 @@ function DowloandTorrentFile()
 
       NameFile += '.torrent';
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
+      showPopup();
     }else
     {
       const magnet = TorrentsFiles[id].magnet;
@@ -136,5 +142,25 @@ function DowloandTorrentFile()
     }
     } 
 
-console.log("Result test: " + TestTorent());
 
+
+var input = document.getElementById("text-field__input");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        SearchStart();
+    }
+});
+
+
+function showPopup() {
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.textContent = 'Файл загружен';
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, 2000);
+
+}
