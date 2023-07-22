@@ -140,10 +140,17 @@ function OpenLibGame()
     NewGameLib(this.id)
 }
 
-// Слайдер изображений
-function InitScreenshot()
-{
- 
+// Сообщение
+function showPopup(text) {
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.textContent = text;
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, 2000);
+
 }
 
 //Кнопка загрузки
@@ -248,7 +255,7 @@ Byid('BTNDowloand').onclick = function()
 
       NameFile += '.torrent';
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
-      showPopup();
+      showPopup("Файл загуржен");
     }else
     {
       const magnet = TorrentsFiles[id].magnet;
@@ -257,18 +264,6 @@ Byid('BTNDowloand').onclick = function()
     }
     }    
 
-
-    function showPopup() {
-      const popup = document.createElement('div');
-      popup.className = 'popup';
-      popup.textContent = 'Файл загружен';
-      document.body.appendChild(popup);
-    
-      setTimeout(() => {
-        document.body.removeChild(popup);
-      }, 2000);
-    
-    }
 
 //Кнопки играть и настройка
 Byid('BTNPlay').onclick = function()
@@ -284,7 +279,7 @@ Byid('BTNPlay').onclick = function()
       });
     }else
     {
-      alert("Настройте запуск");
+      showPopup("Настройте запуск");
     }
 }
 
@@ -300,7 +295,7 @@ Byid('Setting').onclick = function()
   const config={type:'open-file'}
   dialog(config)
     .then(dir => Lib(dir[0]))
-    .catch(err => alert(err))
+    .catch(err => showPopup(err))
 }
 
 Byid('BTNDelete').onclick = function()
@@ -351,7 +346,7 @@ Byid('Game_fon_div').onclick = function()
     const config={type:'open-file'}
     dialog(config)
       .then(dir => Path(dir[0]))
-      .catch(err => alert(err))
+      .catch(err => showPopup(err))
   
 }
 //✓⋮

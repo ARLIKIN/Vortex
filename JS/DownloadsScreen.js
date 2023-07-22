@@ -43,7 +43,7 @@ function OpenT(i)
             console.log(`stdout: ${stdout}`);
             console.error(`stderr: ${stderr}`);
             });
-    }catch{alert('Что то пошло не так' + error)}
+    }catch{showPopup('Что то пошло не так' + error)}
     
 }
 
@@ -60,6 +60,18 @@ function DeletT(i)
     Div.parentNode.removeChild(Div);
 }
 
+
+function showPopup(text) {
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.textContent = text;
+    document.body.appendChild(popup);
+  
+    setTimeout(() => {
+      document.body.removeChild(popup);
+    }, 2000);
+  
+  }
 
 
 

@@ -11,7 +11,7 @@ var PaintElement = function(data)
   console.log(data);
   if(data.length == 0)
   {
-    alert("По вашему запросу ничего не найдено");
+    showPopup("По вашему запросу ничего не найдено")
     return;
   }
   RecomendGames = data;
@@ -136,3 +136,15 @@ input.addEventListener("keyup", function(event) {
         SearchBTN();
     }
 });
+
+function showPopup(text) {
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.textContent = text;
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, 2000);
+
+}

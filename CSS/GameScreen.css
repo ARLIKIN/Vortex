@@ -422,6 +422,7 @@ img
     font-weight: 700;
     line-height: normal;
     transition: background 0.5s ease;
+    user-select: none;
 }
 
 #BTNDowloand:hover

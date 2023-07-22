@@ -240,7 +240,7 @@ Byid('BTNDowloand').onclick = function()
 
       NameFile += '.torrent';
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
-      showPopup()
+      showPopup("Файл загружен")
     }else
     {
       const magnet = TorrentsFiles[id].magnet;
@@ -249,10 +249,10 @@ Byid('BTNDowloand').onclick = function()
     }
     }
 
-    function showPopup() {
+    function showPopup(text) {
       const popup = document.createElement('div');
       popup.className = 'popup';
-      popup.textContent = 'Файл загружен';
+      popup.textContent = text;
       document.body.appendChild(popup);
     
       setTimeout(() => {

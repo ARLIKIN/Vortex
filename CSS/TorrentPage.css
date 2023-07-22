@@ -242,6 +242,9 @@ input::-webkit-inner-spin-button {
 .TableTitle
 {
     text-align: left;
+    max-width: 29vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .TablePeers
@@ -256,6 +259,7 @@ input::-webkit-inner-spin-button {
 .TableLink
 {
     text-decoration: underline;
+    color: #3a98c0;
 }
 
 .TableDowloand
