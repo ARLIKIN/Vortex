@@ -43,22 +43,15 @@ h1,h2,h3,h4,h5
 
 .main_div
 {
-    display: flex;
-    justify-content: center;
     background: rgba(7, 26, 33, 0.69);
-
 }
 
-.Center_div
-{
-    width: 1200px;
-}
+
 
 /*Menu*/
 .menu_div
 {
     height: 55px;
-    /*background: rgba(7, 26, 33, 0.69);*/
 }
 
 .menu_ul
