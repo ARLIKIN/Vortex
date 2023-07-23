@@ -14,11 +14,23 @@ var TorrentsFiles;
 var User_Lib;
 var NameTitle;
 
+function checkFileExistsSync(filepath){
+  let flag = true;
+  try{
+    fs.accessSync(filepath, fs.constants.F_OK);
+  }catch(e){
+    flag = false;
+  }
+  return flag;
+}
 
 //инициализация 
 function InitLib()
 {
-  
+    if(!checkFileExistsSync('Lib_user.json'))
+    {
+      fs.writeFileSync('Lib_user.json','{}','utf-8');
+    }
     User_Lib =  JSON.parse(fs.readFileSync('Lib_user.json','utf8'));
     if(Object.keys(User_Lib).length ==0)
     {

@@ -23,9 +23,20 @@ function InitScreenshot()
 }
 
 
+function checkFileExistsSync(filepath){
+  let flag = true;
+  try{
+    fs.accessSync(filepath, fs.constants.F_OK);
+  }catch(e){
+    flag = false;
+  }
+  return flag;
+}
+
 function InitPage()
 {
   data = JSON.parse(fs.readFileSync('data.txt','utf8')); // Вся информация по игре
+  if(!checkFileExistsSync('Lib_user.json')){fs.writeFileSync('Lib_user.json','{}','utf-8');}
   User_Lib = JSON.parse(fs.readFileSync('Lib_user.json','utf8'));
   
   for(key in User_Lib)  // есть ли игра в библиотеке
