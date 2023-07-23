@@ -250,6 +250,9 @@ Byid('BTNDowloand').onclick = function()
       }
 
       NameFile += '.torrent';
+      if (!fs.existsSync('./Downloads')) {
+        fs.mkdirSync('./Downloads', { recursive: true });
+      } 
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
       showPopup("Файл загружен")
     }else

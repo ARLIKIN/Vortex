@@ -34,8 +34,8 @@ function InitLib()
     User_Lib =  JSON.parse(fs.readFileSync('Lib_user.json','utf8'));
     if(Object.keys(User_Lib).length ==0)
     {
-        Byid('Content_Game').innerHTML = '<h1>У вас нет игр</h1>';
-        Byid('Content_Game').style = 'text-align: center; margin-top: 50px;'
+        Byid('NameTitle').innerHTML = '<h1>У вас нет игр</h1>';
+        Byid('Content_Game_MainBlock').style.display = 'none';
         //Byid('Head_Game_Lib').innerHTML = ''; удалена шапака
         return;
     }
@@ -109,7 +109,7 @@ function NewGameLib(title)
         var check = false;
         //Видео
         if(User_Lib[title].movies)
-        for(var i =0; i < User_Lib[title].movies.length && i<15; i++)
+        for(var i =0; i < User_Lib[title].movies.length && i<10; i++)
         {
           if( i == 0){
             Byid('slides').innerHTML +='<video class="video" controls="" name="media" src="'+ User_Lib[title].movies[i].mp4.max +'"class="visible"></video>';
@@ -266,6 +266,11 @@ Byid('BTNDowloand').onclick = function()
       }
 
       NameFile += '.torrent';
+    
+      if (!fs.existsSync('./Downloads')) {
+        fs.mkdirSync('./Downloads', { recursive: true });
+      }   
+
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
       showPopup("Файл загуржен");
     }else
@@ -352,6 +357,7 @@ Byid('Game_fon_div').onclick = function()
         User_Lib[name]["source"] = "another";
         User_Lib[name]["path"] = Path;
         fs.writeFileSync('Lib_user.json',JSON.stringify(User_Lib));
+        Byid('Content_Game_MainBlock').style.display = 'block';
         newInit();
     }
   
