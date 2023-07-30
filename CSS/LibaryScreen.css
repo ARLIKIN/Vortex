@@ -119,7 +119,7 @@ h1,h2,h3,h4,h5
     overflow: hidden; /* Обрезаем содержимое */
     text-overflow: ellipsis;
     position: relative;
-    height: 55px;
+    height: 65px;
     border-radius: 12px;
     background: rgba(37, 134, 204, 0.62);
     cursor: pointer;
@@ -127,6 +127,7 @@ h1,h2,h3,h4,h5
     margin-right: 4px;
     margin-bottom: 7px;
     text-align: center;
+    align-items: center;
 }
 
 .Game:hover
@@ -161,7 +162,6 @@ h1,h2,h3,h4,h5
     width: 86px;
     height: 45px;
     border-radius: 8px;
-    margin-top: 5px;
     margin-left: 5px;
 }
 
@@ -175,7 +175,6 @@ h1,h2,h3,h4,h5
     line-height: normal;
     user-select: none;
     margin-left: 10px;
-    margin-top: 19px;
 }
 
 .Game_lib_div

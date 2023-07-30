@@ -95,6 +95,12 @@ p,h1,h2,h3,h4
     
 }
 
+.Menu_Item:focus-visible
+{
+    outline: none;
+}
+
+
 .icon
 {
     font-size: 32px;

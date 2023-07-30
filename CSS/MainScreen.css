@@ -96,6 +96,12 @@ body::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
     
 }
 
+.Menu_Item:focus-visible
+{
+    outline: none;
+}
+
+
 .icon
 {
     font-size: 32px;
