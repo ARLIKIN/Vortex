@@ -14,16 +14,28 @@ var TorrentsFiles;
 var User_Lib;
 var NameTitle;
 
+function checkFileExistsSync(filepath){
+  let flag = true;
+  try{
+    fs.accessSync(filepath, fs.constants.F_OK);
+  }catch(e){
+    flag = false;
+  }
+  return flag;
+}
 
 //инициализация 
 function InitLib()
 {
-  
+    if(!checkFileExistsSync('Lib_user.json'))
+    {
+      fs.writeFileSync('Lib_user.json','{}','utf-8');
+    }
     User_Lib =  JSON.parse(fs.readFileSync('Lib_user.json','utf8'));
     if(Object.keys(User_Lib).length ==0)
     {
-        Byid('Content_Game').innerHTML = '<h1>У вас нет игр</h1>';
-        Byid('Content_Game').style = 'text-align: center; margin-top: 50px;'
+        Byid('NameTitle').innerHTML = '<h1>У вас нет игр</h1>';
+        Byid('Content_Game_MainBlock').style.display = 'none';
         //Byid('Head_Game_Lib').innerHTML = ''; удалена шапака
         return;
     }
@@ -97,7 +109,7 @@ function NewGameLib(title)
         var check = false;
         //Видео
         if(User_Lib[title].movies)
-        for(var i =0; i < User_Lib[title].movies.length && i<15; i++)
+        for(var i =0; i < User_Lib[title].movies.length && i<10; i++)
         {
           if( i == 0){
             Byid('slides').innerHTML +='<video class="video" controls="" name="media" src="'+ User_Lib[title].movies[i].mp4.max +'"class="visible"></video>';
@@ -140,10 +152,17 @@ function OpenLibGame()
     NewGameLib(this.id)
 }
 
-// Слайдер изображений
-function InitScreenshot()
-{
- 
+// Сообщение
+function showPopup(text) {
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.textContent = text;
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, 2000);
+
 }
 
 //Кнопка загрузки
@@ -247,8 +266,13 @@ Byid('BTNDowloand').onclick = function()
       }
 
       NameFile += '.torrent';
+    
+      if (!fs.existsSync('./Downloads')) {
+        fs.mkdirSync('./Downloads', { recursive: true });
+      }   
+
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
-      showPopup();
+      showPopup("Файл загуржен");
     }else
     {
       const magnet = TorrentsFiles[id].magnet;
@@ -257,18 +281,6 @@ Byid('BTNDowloand').onclick = function()
     }
     }    
 
-
-    function showPopup() {
-      const popup = document.createElement('div');
-      popup.className = 'popup';
-      popup.textContent = 'Файл загружен';
-      document.body.appendChild(popup);
-    
-      setTimeout(() => {
-        document.body.removeChild(popup);
-      }, 2000);
-    
-    }
 
 //Кнопки играть и настройка
 Byid('BTNPlay').onclick = function()
@@ -284,7 +296,7 @@ Byid('BTNPlay').onclick = function()
       });
     }else
     {
-      alert("Настройте запуск");
+      showPopup("Настройте запуск");
     }
 }
 
@@ -300,7 +312,7 @@ Byid('Setting').onclick = function()
   const config={type:'open-file'}
   dialog(config)
     .then(dir => Lib(dir[0]))
-    .catch(err => alert(err))
+    .catch(err => showPopup(err))
 }
 
 Byid('BTNDelete').onclick = function()
@@ -345,13 +357,14 @@ Byid('Game_fon_div').onclick = function()
         User_Lib[name]["source"] = "another";
         User_Lib[name]["path"] = Path;
         fs.writeFileSync('Lib_user.json',JSON.stringify(User_Lib));
+        Byid('Content_Game_MainBlock').style.display = 'block';
         newInit();
     }
   
     const config={type:'open-file'}
     dialog(config)
       .then(dir => Path(dir[0]))
-      .catch(err => alert(err))
+      .catch(err => showPopup(err))
   
 }
 //✓⋮

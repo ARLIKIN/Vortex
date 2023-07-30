@@ -50,14 +50,18 @@ img
     padding: 0;
     width: 100%;
     height: 1080px;
-    display: flex;
-    justify-content: center;
 }
 
 .Center_div
 {
-    width: 1200px;
+    display: flex;
+    justify-content: center;
     text-align: center;
+}
+
+.Content_div
+{
+    width: 1200px;
 }
 
 /*Menu*/
@@ -253,6 +257,7 @@ img
     border-radius: 10px;
     background: linear-gradient(0deg, rgba(27, 99, 152, 0.70) 0%, rgba(26, 107, 150, 0.70) 100%);
     padding: 10px;
+    height: 98.7%;
 }
 
 .GameABOUT_text
@@ -422,6 +427,7 @@ img
     font-weight: 700;
     line-height: normal;
     transition: background 0.5s ease;
+    user-select: none;
 }
 
 #BTNDowloand:hover

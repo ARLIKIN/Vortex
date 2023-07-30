@@ -132,6 +132,9 @@ function DowloandTorrentFile()
       }
 
       NameFile += '.torrent';
+      if (!fs.existsSync('./Downloads')) {
+        fs.mkdirSync('./Downloads', { recursive: true });
+      } 
       fs.writeFileSync('./Downloads/'+NameFile,buffer);
       showPopup();
     }else

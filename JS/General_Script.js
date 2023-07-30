@@ -1,20 +1,22 @@
-
 const steam = require('steamstoreapi');
 const fs = require('fs');
+var pages;
+let recommendationsLoaded = false;
 var Byid = function(id)
 {
   return document.getElementById(id);
 }
 
-var PaintElement = function(data)
+var PaintElement = function(data,search)
 {
   console.log(data);
   if(data.length == 0)
   {
-    alert("По вашему запросу ничего не найдено");
+    showPopup("По вашему запросу ничего не найдено")
     return;
   }
-  RecomendGames = data;
+  if(search)
+  Byid('Content_div').innerHTML = '';
   var GameDiv = "";
   for(var i =0; i < data.length; i++)
   {
@@ -23,34 +25,28 @@ var PaintElement = function(data)
       if(i!=0){GameDiv += '</div>';}
       GameDiv += '<div class="GameBlock">';
     }
-    GameDiv += '<div id="Obj:' + data[i].appid+'"><img id="'+data[i].appid+'_img" class="GameIMG" src="'+data[i].headerImage+'" alt="'+data[i].smallImage
+    GameDiv += '<div onclick="OpenPageGame('+data[i].appid+')" id="Obj:' + data[i].appid+'"><img id="'+data[i].appid+'_img" class="GameIMG" src="'+data[i].headerImage+'" alt="'+data[i].smallImage
     +'"><p id="'+data[i].appid+'_p" class="GameP">'+data[i].title+'</p></div>'
   }
   if(data.length %3 ==0)
   {
     GameDiv += '</div>';
   }
-  Byid('Content_div').innerHTML = GameDiv;
-
-  var temp1 = "";
-  var temp2 = "";
-  for(var i =0; i < data.length; i++)
-  {
-    temp1 = data[i].appid+'_img';
-    temp2 = data[i].appid+'_p';
-    Byid(temp1).addEventListener("click",OpenGame);
-    Byid(temp2).addEventListener("click",OpenGame);
-  }
+  Byid('Content_div').innerHTML += GameDiv;
+  recommendationsLoaded = false;
 }
 
-var GetRecomendGames = function()
+var GetRecomendGames = function(page)
 {
+  if(recommendationsLoaded)return
+  recommendationsLoaded = true;
+  pages = page
   var searchData = {
     "onlyGames": true,
     "term": "", // Search text
-    "tags": ['4182'],//Singl Player
+    "tags": ['4182',],//Singl Player
     "untags": [],
-    "category1": [],
+    "category1": ["Racing"],
     "category2": [],
     "category3": [],
     "special_categories": [],
@@ -62,18 +58,10 @@ var GetRecomendGames = function()
     "supportedlang": [],
     "vrsupport": [],
     "excluldeVRonlyTitles": false,
-    "page": 1,
+    "page": page,
   }
-  steam.search(searchData,function(data) {PaintElement(data)})
- 
+  steam.search(searchData,function(data) {PaintElement(data,false)})
 }
-
-
-var OpenGame = function()
-{
-  OpenPageGame(this.id.split('_')[0])
-}
-
 
 var OpenPageGame = function(id)
 {
@@ -85,16 +73,12 @@ var OpenPageGame = function(id)
   steam.getByID(idData,function(data){CreateNewPage(data)})
     function CreateNewPage(data)
     {
-      //var FinalHTML = fs.readFileSync('JS/CreateList1.txt','utf8');
-      //console.log(FinalHTML);
       console.log(data);
       fs.writeFileSync('data.txt',JSON.stringify(data));
-      //var sample =  fs.readFileSync('HTML/Temp_0.txt','utf-8'); //Неизвестно зачем это было написано удалить после тестов
-      //fs.writeFileSync('HTML/Temp_2.html',sample);
       document.location.href = "GameScreen.html"; 
     }
 }
-GetRecomendGames();
+GetRecomendGames(1);
 
 
 var SearchBTN = function()
@@ -124,11 +108,11 @@ var SearchBTN = function()
     "excluldeVRonlyTitles": false,
     "page": 1,
   }
-  steam.search(searchData,function(data) {PaintElement(data)})
+  steam.search(searchData,function(data) {PaintElement(data,true)})
 }
 
 
-
+//Поиск по нажатию клавиши Enther
 var input = document.getElementById("text-field__input");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -136,3 +120,32 @@ input.addEventListener("keyup", function(event) {
         SearchBTN();
     }
 });
+
+//Сообщение
+function showPopup(text) {
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.textContent = text;
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, 2000);
+
+}
+
+//Загрузка страницы при Scroll
+function isBottom30Percent() {
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.body.offsetHeight;
+  const scrollPosition = window.scrollY;
+  const remainingScroll = documentHeight - (scrollPosition + windowHeight);
+  return remainingScroll < (0.4 * windowHeight);
+}
+
+// Обработчик события прокрутки страницы
+window.onscroll = function() {
+  if (isBottom30Percent()) {
+      GetRecomendGames(pages+1);
+  }
+};

@@ -53,6 +53,7 @@ p,h1,h2,h3,h4
 {
     width: 1200px;
     text-align: center;
+    margin-top: 80px;
 }
 
 /*Menu*/
@@ -61,7 +62,9 @@ p,h1,h2,h3,h4
     height: 55px;
     border-radius: 94px;
     background: rgba(7, 26, 33, 0.69);
-    
+    position: fixed;
+    top: 0;
+    width: 100%;
 
 }
 
@@ -242,6 +245,9 @@ input::-webkit-inner-spin-button {
 .TableTitle
 {
     text-align: left;
+    max-width: 29vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .TablePeers
@@ -256,6 +262,7 @@ input::-webkit-inner-spin-button {
 .TableLink
 {
     text-decoration: underline;
+    color: #3a98c0;
 }
 
 .TableDowloand
