@@ -173,6 +173,93 @@ body::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
     right: 0;
 }
 
+/*Дроп теги поиска*/
+
+.dropdown
+{
+    height: 41px;
+    border-radius: 12px;
+    background: rgba(7, 26, 33, 0.80);
+    display: flex;
+    justify-content: center;
+    margin-left: 1vw;
+}
+
+.select-box
+{
+    height: 27px;
+    margin-top: 4px;
+}
+
+/* Градиентный фон для поля поиска */
+.select-box input[type="text"] {
+    color: #fff; /* Измените цвет текста на белый или другой контрастный цвет */
+    border: 1px solid #2C5362; /* Добавляем рамку вокруг поля поиска */
+    border-radius: 4px; /* Добавляем закругление углов рамки */
+    padding: 5px; /* Добавляем небольшой отступ внутри поля поиска */
+    border-radius: 12px;
+    background: #2C5362;
+    color: #FFF;
+    font-family: Unbounded;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 180px;
+}
+
+.dropdown {
+    position: relative;
+    width: 200px;
+}
+
+.select-box {
+    display: block;
+    cursor: pointer;
+}
+
+.arrow {
+    float: right;
+}
+
+.dropdown-content {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1;
+    margin-top: 40px;
+    background: rgba(7, 26, 33, 0.80);
+    border-radius: 10px;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 5px;
+    color: #fff; /* Измените цвет текста на белый или другой контрастный цвет */
+}
+
+.dropdown-content::-webkit-scrollbar { /*Полоса прокрутки*/
+    width: 7px;
+    border-radius: 4px;
+    background: #1D3644;
+    position: relative;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
+    width: 5px;
+    height: 20px;
+    border-radius: 7px;
+    background: #1a7ba1;
+}
+
+/* Стиль для выделенных пунктов */
+.dropdown-content label.selected {
+    background-color: #2C5362;
+    font-weight: bold;
+}
+
 /*Game*/
 .GameBlock
 {
@@ -228,3 +315,4 @@ body::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
     color: white;
     z-index: 1000;
 }
+

@@ -149,3 +149,55 @@ window.onscroll = function() {
       GetRecomendGames(pages+1);
   }
 };
+
+//Дроп теги поиска
+document.addEventListener("DOMContentLoaded", function () {
+  const selectBox = document.querySelector(".select-box");
+  const dropdownContent = document.querySelector(".dropdown-content");
+  const searchInput = selectBox.querySelector("input[type='text']");
+
+  selectBox.addEventListener("click", function (event) {
+      event.stopPropagation();
+      dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+  });
+
+  dropdownContent.addEventListener("click", function (event) {
+      event.stopPropagation();
+  });
+
+  document.addEventListener("click", function () {
+      dropdownContent.style.display = "none";
+  });
+
+  searchInput.addEventListener("input", function () {
+      const query = searchInput.value.toLowerCase();
+      const labels = dropdownContent.querySelectorAll("label");
+
+      labels.forEach(function (label) {
+          const labelText = label.textContent.toLowerCase();
+          if (labelText.includes(query)) {
+              label.style.display = "block";
+          } else {
+              label.style.display = "none";
+          }
+      });
+  });
+
+  const checkboxes = dropdownContent.querySelectorAll("input[type='checkbox']");
+
+  checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("change", function () {
+          const label = checkbox.parentNode;
+          if (checkbox.checked) {
+              label.classList.add("selected");
+          } else {
+              label.classList.remove("selected");
+          }
+
+          const selectedLabels = dropdownContent.querySelectorAll(".selected");
+          selectedLabels.forEach(function (selectedLabel) {
+              dropdownContent.prepend(selectedLabel);
+          });
+      });
+  });
+});
