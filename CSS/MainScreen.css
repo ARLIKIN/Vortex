@@ -208,6 +208,11 @@ body::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
     width: 180px;
 }
 
+.select-box input[type="text"]:focus-visible
+{
+    outline: none;
+}
+
 .dropdown {
     position: relative;
     width: 200px;
@@ -227,12 +232,17 @@ body::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
     width: 100%;
     max-height: 200px;
     overflow-y: auto;
+    overflow-x: hidden;
     display: none;
     z-index: 1;
     margin-top: 40px;
     background: rgba(7, 26, 33, 0.80);
     border-radius: 10px;
+    text-align: left;
+    font-size: 12px;
 }
+
+
 
 .dropdown-content label {
     display: block;
@@ -245,6 +255,7 @@ body::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/
     border-radius: 4px;
     background: #1D3644;
     position: relative;
+    
 }
 
 .dropdown-content::-webkit-scrollbar-thumb { /* Индикатор прокрутки*/

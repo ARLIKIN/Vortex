@@ -2,6 +2,7 @@ const steam = require('steamstoreapi');
 const fs = require('fs');
 var pages;
 let recommendationsLoaded = false;
+var Tags = ['4182']; //Singl Player
 var Byid = function(id)
 {
   return document.getElementById(id);
@@ -44,9 +45,9 @@ var GetRecomendGames = function(page)
   var searchData = {
     "onlyGames": true,
     "term": "", // Search text
-    "tags": ['4182',],//Singl Player
+    "tags": Tags,
     "untags": [],
-    "category1": ["Racing"],
+    "category1": [],
     "category2": [],
     "category3": [],
     "special_categories": [],
@@ -81,18 +82,16 @@ var OpenPageGame = function(id)
 GetRecomendGames(1);
 
 
-var SearchBTN = function()
+var SearchBTN = function(search_Text)
 {
   var ReqestGame = Byid('text-field__input').value;
-  if(ReqestGame == '')
-  {
-    document.location.href = "MainScreen.html"; 
-  }
-
+  var TagsS
+  if(search_Text && ReqestGame != ''){TagsS = []}
+  else{TagsS = Tags}
   var searchData = {
     "onlyGames": true,
     "term": ReqestGame, // Search text
-    "tags": [],// All Category
+    "tags": TagsS,// All Category
     "untags": [],
     "category1": [],
     "category2": [],
@@ -117,7 +116,7 @@ var input = document.getElementById("text-field__input");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-        SearchBTN();
+        SearchBTN(true);
     }
 });
 
@@ -151,6 +150,26 @@ window.onscroll = function() {
 };
 
 //Дроп теги поиска
+
+function Add_Teg(Teg)
+{
+  if(!Tags.includes(Teg))
+    {
+      Tags.push(Teg);
+      SearchBTN(false);
+    }
+}
+
+function Remove_Teg(Teg)
+{
+  if(Tags.includes(Teg))
+    {
+      Tags.splice(Tags.indexOf(Teg),1);
+      SearchBTN(false);
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const selectBox = document.querySelector(".select-box");
   const dropdownContent = document.querySelector(".dropdown-content");
@@ -190,8 +209,10 @@ document.addEventListener("DOMContentLoaded", function () {
           const label = checkbox.parentNode;
           if (checkbox.checked) {
               label.classList.add("selected");
+              Add_Teg(checkbox.value);
           } else {
               label.classList.remove("selected");
+              Remove_Teg(checkbox.value);
           }
 
           const selectedLabels = dropdownContent.querySelectorAll(".selected");
@@ -201,3 +222,16 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+
+window.addEventListener('pageshow', function(event) {
+  var historyTraversal = event.persisted || 
+   (typeof window.performance != 'undefined' && 
+  window.performance.navigation.type === 2);
+  
+  if (historyTraversal) {
+    location.reload();
+  }
+});
+
+
