@@ -1,5 +1,6 @@
 # Vortex
 Парсер игр из Steam с интеграцией Торрент-трекеров
+
 Главная страница
 ![image](https://github.com/ARLIKIN/Vortex-1.0.0/assets/38999833/f699b8e5-dbb7-40b6-a22a-311419ed2492)
 
