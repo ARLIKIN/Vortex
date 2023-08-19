@@ -31,8 +31,459 @@
                     <div class="Search">
                         <div class="Search_fon"> 
                             <input class="text-field__input" id="text-field__input" type="text">
-                            <a class="Search_fon_btn" href="#" onclick="SearchBTN()" id="Search_li_buttton"><img class="Search_fon_btn_img" src="../img/Лупа.png" alt="Найти" width="29px" height="28"></a>
+                            <a class="Search_fon_btn" href="#" onclick="SearchBTN(true)" id="Search_li_buttton"><img class="Search_fon_btn_img" src="../img/Лупа.png" alt="Найти" width="29px" height="28"></a>
                         </div>  
+                        <div class="dropdown">
+                            <div class="select-box">
+                                <input type="text" placeholder="Жанры">
+                                <!--<span class="arrow">&#9660;</span>-->
+                            </div>
+                            <div class="dropdown-content">
+                                <label class="selected"><input type="checkbox" checked value="4182">Для одного игрока </label>
+                                <label><input type="checkbox" value="492">Инди </label>
+                                <label><input type="checkbox" value="19">Экшен </label>
+                                <label><input type="checkbox" value="21">Приключение </label>
+                                <label><input type="checkbox" value="597">Казуальная игра</label>
+                                <label><input type="checkbox" value="122">Ролевая игра </label>
+                                <label><input type="checkbox" value="599">Симулятор </label>
+                                <label><input type="checkbox" value="9">Стратегия </label>
+                                <label><input type="checkbox" value="493">Ранний доступ </label>
+                                <label><input type="checkbox" value="113">Бесплатная игра </label>
+                                <label><input type="checkbox" value="3871">2D </label>
+                                <label><input type="checkbox" value="4191">3D </label>
+                                <label><input type="checkbox" value="4166">Атмосферная </label>
+                                <label><input type="checkbox" value="1684">Фэнтези </label>
+                                <label><input type="checkbox" value="1742">Глубокий сюжет </label>
+                                <label><input type="checkbox" value="4305">Цветастая </label>
+                                <label><input type="checkbox" value="3859">Для нескольких игроков </label>
+                                <label><input type="checkbox" value="1664">Головоломка </label>
+                                <label><input type="checkbox" value="128">ММО </label>
+                                <label><input type="checkbox" value="3964">Пиксельная графика </label>
+                                <label><input type="checkbox" value="3834">Исследования </label>
+                                <label><input type="checkbox" value="701">Спортивная игра </label>
+                                <label><input type="checkbox" value="4667">Насилие </label>
+                                <label><input type="checkbox" value="4726">Милая </label>
+                                <label><input type="checkbox" value="3839">От первого лица </label>
+                                <label><input type="checkbox" value="3993">Бой </label>
+                                <label><input type="checkbox" value="699">Гонки </label>
+                                <label><input type="checkbox" value="4085">Аниме </label>
+                                <label><input type="checkbox" value="12095">Сексуальный контент</label>
+                                <label><input type="checkbox" value="6650">Нагота </label>
+                                <label><input type="checkbox" value="4136">Смешная </label>
+                                <label><input type="checkbox" value="1773">Аркада </label>
+                                <label><input type="checkbox" value="4106">Приключенческий экшен </label>
+                                <label><input type="checkbox" value="3942">Научная фантастика </label>
+                                <label><input type="checkbox" value="1774">Шутер </label>
+                                <label><input type="checkbox" value="1654">Расслабляющая </label>
+                                <label><input type="checkbox" value="4345">Мясо </label>
+                                <label><input type="checkbox" value="1667">Хоррор </label>
+                                <label><input type="checkbox" value="4004">Ретро </label>
+                                <label><input type="checkbox" value="5350">Для всей семьи </label>
+                                <label><input type="checkbox" value="1697">От третьего лица </label>
+                                <label><input type="checkbox" value="7208">Протагонистка </label>
+                                <label><input type="checkbox" value="7481">Контроллер </label>
+                                <label><input type="checkbox" value="1695">Открытый мир </label>
+                                <label><input type="checkbox" value="4252">Стилизация </label>
+                                <label><input type="checkbox" value="1685">Кооператив </label>
+                                <label><input type="checkbox" value="1625">Платформер </label>
+                                <label><input type="checkbox" value="1662">Выживание </label>
+                                <label><input type="checkbox" value="1775">Игрок против игрока </label>
+                                <label><input type="checkbox" value="6426">Решения с последствиями </label>
+                                <label><input type="checkbox" value="4791">Вид сверху </label>
+                                <label><input type="checkbox" value="1719">Юмор </label>
+                                <label><input type="checkbox" value="4175">Реализм </label>
+                                <label><input type="checkbox" value="3799">Визуальная новелла </label>
+                                <label><input type="checkbox" value="6730">Игрок против ИИ </label>
+                                <label><input type="checkbox" value="4342">Мрачная </label>
+                                <label><input type="checkbox" value="4747">Кастомизация персонажа </label>
+                                <label><input type="checkbox" value="3968">Физика </label>
+                                <label><input type="checkbox" value="4195">Мультипликация </label>
+                                <label><input type="checkbox" value="1663">Шутер от первого лица </label>
+                                <label><input type="checkbox" value="3916">Олдскул </label>
+                                <label><input type="checkbox" value="5716">Тайна </label>
+                                <label><input type="checkbox" value="7250">Линейная </label>
+                                <label><input type="checkbox" value="3843">Сетевой кооператив </label>
+                                <label><input type="checkbox" value="5379">2D платформер </label>
+                                <label><input type="checkbox" value="6971">Несколько концовок </label>
+                                <label><input type="checkbox" value="4026">Сложная </label>
+                                <label><input type="checkbox" value="21978">VR </label>
+                                <label><input type="checkbox" value="1721">Психологический хоррор </label>
+                                <label><input type="checkbox" value="1756">Отличный саундтрек </label>
+                                <label><input type="checkbox" value="4057">Магия </label>
+                                <label><input type="checkbox" value="3810">Песочница </label>
+                                <label><input type="checkbox" value="4172">Средневековье </label>
+                                <label><input type="checkbox" value="1708">Тактика </label>
+                                <label><input type="checkbox" value="4231">Ролевой экшен </label>
+                                <label><input type="checkbox" value="4295">Будущее </label>
+                                <label><input type="checkbox" value="4094">Минимализм </label>
+                                <label><input type="checkbox" value="1755">Космос </label>
+                                <label><input type="checkbox" value="1643">Строительство </label>
+                                <label><input type="checkbox" value="6815">Рисованная графика </label>
+                                <label><input type="checkbox" value="1698">Point &amp; Click </label>
+                                <label><input type="checkbox" value="1702">Крафтинг </label>
+                                <label><input type="checkbox" value="12472">Менеджмент </label>
+                                <label><input type="checkbox" value="4255">Shoot 'em up </label>
+                                <label><input type="checkbox" value="1716">Рогалик </label>
+                                <label><input type="checkbox" value="84">Дизайн и иллюстрация </label>
+                                <label><input type="checkbox" value="7368">Локальный мультиплеер </label>
+                                <label><input type="checkbox" value="4562">Мультфильмы </label>
+                                <label><input type="checkbox" value="5984">Драма </label>
+                                <label><input type="checkbox" value="3798">Вид сбоку </label>
+                                <label><input type="checkbox" value="5125">Процедурная генерация </label>
+                                <label><input type="checkbox" value="3959">Упрощённый рогалик </label>
+                                <label><input type="checkbox" value="8945">Управление ресурсами </label>
+                                <label><input type="checkbox" value="4604">Тёмное фэнтези </label>
+                                <label><input type="checkbox" value="6129">Логика </label>
+                                <label><input type="checkbox" value="5611">Для взрослых </label>
+                                <label><input type="checkbox" value="5395">3D платформер </label>
+                                <label><input type="checkbox" value="3978">Хоррор на выживание </label>
+                                <label><input type="checkbox" value="1036">Образование </label>
+                                <label><input type="checkbox" value="4486">Выбери себе приключение </label>
+                                <label><input type="checkbox" value="5537">Головоломка платформер </label>
+                                <label><input type="checkbox" value="7743">80е</label>
+                                <label><input type="checkbox" value="4947">Романтика </label>
+                                <label><input type="checkbox" value="4325">Пошаговые сражения </label>
+                                <label><input type="checkbox" value="87">Утилиты </label>
+                                <label><input type="checkbox" value="1646">Слэшер </label>
+                                <label><input type="checkbox" value="5608">Эмоциональная </label>
+                                <label><input type="checkbox" value="1741">Пошаговая стратегия </label>
+                                <label><input type="checkbox" value="1678">Война </label>
+                                <label><input type="checkbox" value="14139">Пошаговая тактика </label>
+                                <label><input type="checkbox" value="11014">Интерактивная литература </label>
+                                <label><input type="checkbox" value="17389">Настольная игра </label>
+                                <label><input type="checkbox" value="9204">Иммерсивный симулятор </label>
+                                <label><input type="checkbox" value="9130">Хентай </label>
+                                <label><input type="checkbox" value="3835">Постапокалипсис </label>
+                                <label><input type="checkbox" value="1659">Зомби </label>
+                                <label><input type="checkbox" value="7332">Строительство базы </label>
+                                <label><input type="checkbox" value="30358">Природа </label>
+                                <label><input type="checkbox" value="9551">Симулятор свиданий </label>
+                                <label><input type="checkbox" value="1738">Поиск предметов </label>
+                                <label><input type="checkbox" value="42804">Экшен рогалик </label>
+                                <label><input type="checkbox" value="4434">Японская ролевая игра </label>
+                                <label><input type="checkbox" value="6691">90е </label>
+                                <label><input type="checkbox" value="1710">Сюрреалистичная </label>
+                                <label><input type="checkbox" value="3841">Локальный кооператив </label>
+                                <label><input type="checkbox" value="4885">Скролл шутер </label>
+                                <label><input type="checkbox" value="10695">Партийная ролевая игра </label>
+                                <label><input type="checkbox" value="1720">Подземелья </label>
+                                <label><input type="checkbox" value="4711">Реиграбельность </label>
+                                <label><input type="checkbox" value="3987">Историческая </label>
+                                <label><input type="checkbox" value="1687">Стелс </label>
+                                <label><input type="checkbox" value="5094">Повествовательная </label>
+                                <label><input type="checkbox" value="5900">Симулятор ходьбы </label>
+                                <label><input type="checkbox" value="5154">Набор очков </label>
+                                <label><input type="checkbox" value="1677">Пошаговая </label>
+                                <label><input type="checkbox" value="4168">Военные действия </label>
+                                <label><input type="checkbox" value="24904">NSFW </label>
+                                <label><input type="checkbox" value="4145">Кинематографичная </label>
+                                <label><input type="checkbox" value="3814">Шутер от третьего лица </label>
+                                <label><input type="checkbox" value="31275">Текстовая </label>
+                                <label><input type="checkbox" value="15172">Беседы </label>
+                                <label><input type="checkbox" value="4637">Шутер с видом сверху </label>
+                                <label><input type="checkbox" value="44868">ЛГБТК+ </label>
+                                <label><input type="checkbox" value="4975">Псевдотрёхмерность </label>
+                                <label><input type="checkbox" value="1673">Инопланетяне </label>
+                                <label><input type="checkbox" value="1038">Веб публикация </label>
+                                <label><input type="checkbox" value="10397">Мемы </label>
+                                <label><input type="checkbox" value="4115">Киберпанк </label>
+                                <label><input type="checkbox" value="5851">Изометрия </label>
+                                <label><input type="checkbox" value="5752">Роботы </label>
+                                <label><input type="checkbox" value="5711">Командная </label>
+                                <label><input type="checkbox" value="8369">Расследования </label>
+                                <label><input type="checkbox" value="5923">Чёрный юмор </label>
+                                <label><input type="checkbox" value="6869">Нелинейная </label>
+                                <label><input type="checkbox" value="1666">Карточная игра </label>
+                                <label><input type="checkbox" value="6276">Менеджмент инвентаря </label>
+                                <label><input type="checkbox" value="7926">Искусственный интеллект </label>
+                                <label><input type="checkbox" value="1676">Стратегия в реальном времени </label>
+                                <label><input type="checkbox" value="10235">Симулятор жизни </label>
+                                <label><input type="checkbox" value="3854">Проработанная вселенная </label>
+                                <label><input type="checkbox" value="12057">Обучение </label>
+                                <label><input type="checkbox" value="9541">Демоны </label>
+                                <label><input type="checkbox" value="17305">Ролевая стратегия </label>
+                                <label><input type="checkbox" value="4400">Абстрактная </label>
+                                <label><input type="checkbox" value="1734">Быстрая </label>
+                                <label><input type="checkbox" value="379975">Кликер </label>
+                                <label><input type="checkbox" value="5186">Психологическая </label>
+                                <label><input type="checkbox" value="4064">Триллер </label>
+                                <label><input type="checkbox" value="1759">Одна жизнь </label>
+                                <label><input type="checkbox" value="5547">Арена шутер </label>
+                                <label><input type="checkbox" value="4695">Экономика </label>
+                                <label><input type="checkbox" value="5613">Детектив </label>
+                                <label><input type="checkbox" value="3813">Тактика в реальном времени </label>
+                                <label><input type="checkbox" value="4234">Короткая </label>
+                                <label><input type="checkbox" value="1644">Вождение </label>
+                                <label><input type="checkbox" value="1770">Настольная с полем </label>
+                                <label><input type="checkbox" value="872">Анимация и моделирование </label>
+                                <label><input type="checkbox" value="10808">Сверхъестественное </label>
+                                <label><input type="checkbox" value="5673">Современность </label>
+                                <label><input type="checkbox" value="5030">Антиутопия </label>
+                                <label><input type="checkbox" value="4840">Локальная игра на четверых </label>
+                                <label><input type="checkbox" value="16689">Тайм менеджмент </label>
+                                <label><input type="checkbox" value="8013">Программное обеспечение </label>
+                                <label><input type="checkbox" value="3877">Платформер на точность </label>
+                                <label><input type="checkbox" value="1714">Психоделия </label>
+                                <label><input type="checkbox" value="1693">Классика </label>
+                                <label><input type="checkbox" value="4236">Лут </label>
+                                <label><input type="checkbox" value="1645">Башенная защита </label>
+                                <label><input type="checkbox" value="21725">Тактическая ролевая игра </label>
+                                <label><input type="checkbox" value="15045">Полёты </label>
+                                <label><input type="checkbox" value="4328">Градостроение </label>
+                                <label><input type="checkbox" value="29482">Похожа на Dark Souls </label>
+                                <label><input type="checkbox" value="1621">Музыка </label>
+                                <label><input type="checkbox" value="1751">По комиксу </label>
+                                <label><input type="checkbox" value="5577">RPG Maker </label>
+                                <label><input type="checkbox" value="7948">Саундтрек </label>
+                                <label><input type="checkbox" value="4684">Военные конфликты </label>
+                                <label><input type="checkbox" value="4158">Beat 'em up </label>
+                                <label><input type="checkbox" value="1628">Метроидвания </label>
+                                <label><input type="checkbox" value="5363">Разрушения </label>
+                                <label><input type="checkbox" value="4598">Альтернативная история </label>
+                                <label><input type="checkbox" value="1669">Поддержка модификаций </label>
+                                <label><input type="checkbox" value="4700">Фильм </label>
+                                <label><input type="checkbox" value="1743">Файтинг </label>
+                                <label><input type="checkbox" value="13782">Экспериментальная </label>
+                                <label><input type="checkbox" value="16094">Мифология </label>
+                                <label><input type="checkbox" value="8122">Редактор уровней </label>
+                                <label><input type="checkbox" value="5411">Красивая </label>
+                                <label><input type="checkbox" value="8666">Раннер </label>
+                                <label><input type="checkbox" value="5652">Коллектатон </label>
+                                <label><input type="checkbox" value="13906">Разработка игр </label>
+                                <label><input type="checkbox" value="7569">Перемещение по сетке </label>
+                                <label><input type="checkbox" value="6378">Криминал </label>
+                                <label><input type="checkbox" value="4736">2D файтинг</label>
+                                <label><input type="checkbox" value="784">Видеопродакшн </label>
+                                <label><input type="checkbox" value="4036">Паркур </label>
+                                <label><input type="checkbox" value="1027">Работа со звуком </label>
+                                <label><input type="checkbox" value="4474">Компьютерная ролевая игра </label>
+                                <label><input type="checkbox" value="615955">Idle игра </label>
+                                <label><input type="checkbox" value="32322">Построение колоды </label>
+                                <label><input type="checkbox" value="3878">Соревновательная </label>
+                                <label><input type="checkbox" value="1754">MMORPG </label>
+                                <label><input type="checkbox" value="4155">Разделение на классы </label>
+                                <label><input type="checkbox" value="19995">Чёрная комедия </label>
+                                <label><input type="checkbox" value="15277">Философская </label>
+                                <label><input type="checkbox" value="5765">Кастомизация оружия </label>
+                                <label><input type="checkbox" value="791774">Карточный баттлер </label>
+                                <label><input type="checkbox" value="4758">Твин стик шутер </label>
+                                <label><input type="checkbox" value="4150">Вторая мировая война </label>
+                                <label><input type="checkbox" value="1100687">Автосимулятор </label>
+                                <label><input type="checkbox" value="5794">Наука </label>
+                                <label><input type="checkbox" value="4508">Совместная кампания </label>
+                                <label><input type="checkbox" value="17894">Котики </label>
+                                <label><input type="checkbox" value="4608">Сражения на мечах </label>
+                                <label><input type="checkbox" value="11104">Гонки на выживание </label>
+                                <label><input type="checkbox" value="1752">Ритм игра </label>
+                                <label><input type="checkbox" value="16598">Космический симулятор </label>
+                                <label><input type="checkbox" value="4046">Драконы </label>
+                                <label><input type="checkbox" value="6506">3D файтинг </label>
+                                <label><input type="checkbox" value="176981">Королевская битва </label>
+                                <label><input type="checkbox" value="4364">Глобальная стратегия </label>
+                                <label><input type="checkbox" value="7432">Лавкрафт </label>
+                                <label><input type="checkbox" value="5055">Киберспорт </label>
+                                <label><input type="checkbox" value="4835">Свобода движения </label>
+                                <label><input type="checkbox" value="29363">3D Vision </label>
+                                <label><input type="checkbox" value="13190">Америка </label>
+                                <label><input type="checkbox" value="4845">Капитализм </label>
+                                <label><input type="checkbox" value="5372">Заговор </label>
+                                <label><input type="checkbox" value="6052">Нуар </label>
+                                <label><input type="checkbox" value="255534">Автоматика </label>
+                                <label><input type="checkbox" value="1665">Три в ряд </label>
+                                <label><input type="checkbox" value="1445">Обучение работе с ПО </label>
+                                <label><input type="checkbox" value="10816">Разделение экрана </label>
+                                <label><input type="checkbox" value="4878">Пародия </label>
+                                <label><input type="checkbox" value="5228">Кровь </label>
+                                <label><input type="checkbox" value="3955">Яркий главный герой </label>
+                                <label><input type="checkbox" value="916648">Поиск существ </label>
+                                <label><input type="checkbox" value="220585">Симулятор колонии </label>
+                                <label><input type="checkbox" value="5796">Замедление времени </label>
+                                <label><input type="checkbox" value="87918">Симулятор фермы </label>
+                                <label><input type="checkbox" value="4202">Торговля </label>
+                                <label><input type="checkbox" value="1651">Сатира </label>
+                                <label><input type="checkbox" value="4559">QTE </label>
+                                <label><input type="checkbox" value="198631">Загадочные подземелья </label>
+                                <label><input type="checkbox" value="6625">Контроль времени </label>
+                                <label><input type="checkbox" value="620519">Геройский шутер </label>
+                                <label><input type="checkbox" value="9592">Динамическое повествование </label>
+                                <label><input type="checkbox" value="1100689">Симулятор выживания в открытом мире </label>
+                                <label><input type="checkbox" value="3952">Готика </label>
+                                <label><input type="checkbox" value="353880">Лутер шутер </label>
+                                <label><input type="checkbox" value="22602">Сельское хозяйство </label>
+                                <label><input type="checkbox" value="21006">Подземная </label>
+                                <label><input type="checkbox" value="24003">Словесная </label>
+                                <label><input type="checkbox" value="1777">Стимпанк </label>
+                                <label><input type="checkbox" value="1732">Воксельная графика </label>
+                                <label><input type="checkbox" value="4190">Затягивающая </label>
+                                <label><input type="checkbox" value="3920">Кулинария </label>
+                                <label><input type="checkbox" value="4853">Политическая </label>
+                                <label><input type="checkbox" value="7478">Иллюминаты </label>
+                                <label><input type="checkbox" value="4777">Зрелищные сражения </label>
+                                <label><input type="checkbox" value="4821">Мехи </label>
+                                <label><input type="checkbox" value="6915">Боевые искусства </label>
+                                <label><input type="checkbox" value="10679">Путешествия во времени </label>
+                                <label><input type="checkbox" value="5981">Горное дело </label>
+                                <label><input type="checkbox" value="9564">Охота </label>
+                                <label><input type="checkbox" value="4102">Боевые гонки </label>
+                                <label><input type="checkbox" value="1638">Собаки </label>
+                                <label><input type="checkbox" value="31579">Отомэ </label>
+                                <label><input type="checkbox" value="13070">Пасьянс </label>
+                                <label><input type="checkbox" value="1681">Пираты </label>
+                                <label><input type="checkbox" value="1718">MOBA </label>
+                                <label><input type="checkbox" value="13276">Танки </label>
+                                <label><input type="checkbox" value="5300">Симулятор бога </label>
+                                <label><input type="checkbox" value="17770">Асинхронный мультиплеер </label>
+                                <label><input type="checkbox" value="1688">Ниндзя </label>
+                                <label><input type="checkbox" value="5502">Хакерство </label>
+                                <label><input type="checkbox" value="11123">Управление мышью </label>
+                                <label><input type="checkbox" value="809">Обработка фото </label>
+                                <label><input type="checkbox" value="1717">Шестиугольная карта </label>
+                                <label><input type="checkbox" value="4018">Вампиры </label>
+                                <label><input type="checkbox" value="5708">Ремейк </label>
+                                <label><input type="checkbox" value="15564">Рыбалка </label>
+                                <label><input type="checkbox" value="9271">Коллекционная карточная игра </label>
+                                <label><input type="checkbox" value="1084988">Автобаттлер </label>
+                                <label><input type="checkbox" value="4754">Политика </label>
+                                <label><input type="checkbox" value="18594">Видеовставки </label>
+                                <label><input type="checkbox" value="3934">Иммерсивная игра </label>
+                                <label><input type="checkbox" value="7702">Повествование </label>
+                                <label><input type="checkbox" value="4376">Ассассины </label>
+                                <label><input type="checkbox" value="4161">В реальном времени </label>
+                                <label><input type="checkbox" value="4242">Сериал </label>
+                                <label><input type="checkbox" value="7782">Культовая классика </label>
+                                <label><input type="checkbox" value="1670">4X </label>
+                                <label><input type="checkbox" value="9157">Подводный мир </label>
+                                <label><input type="checkbox" value="1671">Супергерои </label>
+                                <label><input type="checkbox" value="5179">Холодная война </label>
+                                <label><input type="checkbox" value="3965">Эпичная </label>
+                                <label><input type="checkbox" value="1723">Экшен RTS </label>
+                                <label><input type="checkbox" value="180368">Верования </label>
+                                <label><input type="checkbox" value="5160">Динозавры  </label>
+                                <label><input type="checkbox" value="5432">Программирование </label>
+                                <label><input type="checkbox" value="1730">Сокобан </label>
+                                <label><input type="checkbox" value="1647">Вестерн </label>
+                                <label><input type="checkbox" value="26921">Политический симулятор </label>
+                                <label><input type="checkbox" value="1680">Ограбления </label>
+                                <label><input type="checkbox" value="10383">Транспорт </label>
+                                <label><input type="checkbox" value="7178">Командная игра </label>
+                                <label><input type="checkbox" value="7108">Вечеринка </label>
+                                <label><input type="checkbox" value="6910">Флот </label>
+                                <label><input type="checkbox" value="1616">Поезда </label>
+                                <label><input type="checkbox" value="13382">Стрельба из лука </label>
+                                <label><input type="checkbox" value="8093">Мини игры </label>
+                                <label><input type="checkbox" value="51306">Зарубежная </label>
+                                <label><input type="checkbox" value="6310">Дипломатия </label>
+                                <label><input type="checkbox" value="9803">Снег </label>
+                                <label><input type="checkbox" value="7107">Можно приостановить </label>
+                                <label><input type="checkbox" value="4994">Морской бой </label>
+                                <label><input type="checkbox" value="4137">Трансгуманизм </label>
+                                <label><input type="checkbox" value="1674">Печатание </label>
+                                <label><input type="checkbox" value="16250">Азартная </label>
+                                <label><input type="checkbox" value="13577">Мореплавание </label>
+                                <label><input type="checkbox" value="97376">Уютная </label>
+                                <label><input type="checkbox" value="769306">Эскейп рум </label>
+                                <label><input type="checkbox" value="14153">Dungeons &amp; Dragons </label>
+                                <label><input type="checkbox" value="5153">Kickstarter </label>
+                                <label><input type="checkbox" value="5230">Сиквел </label>
+                                <label><input type="checkbox" value="11333">Злодей протагонист </label>
+                                <label><input type="checkbox" value="7423">Снайперство </label>
+                                <label><input type="checkbox" value="1091588">Карточный рогалик </label>
+                                <label><input type="checkbox" value="14720">Ностальгия </label>
+                                <label><input type="checkbox" value="5348">Модификации </label>
+                                <label><input type="checkbox" value="56690">Рельсовый шутер </label>
+                                <label><input type="checkbox" value="8253">Генерация на основе музыки </label>
+                                <label><input type="checkbox" value="552282">Душевная </label>
+                                <label><input type="checkbox" value="1254546">Футбол </label>
+                                <label><input type="checkbox" value="6702">Марс </label>
+                                <label><input type="checkbox" value="454187">Традиционный рогалик </label>
+                                <label><input type="checkbox" value="25085">Сенсорное управление </label>
+                                <label><input type="checkbox" value="7622">Бездорожье </label>
+                                <label><input type="checkbox" value="9994">Переживание </label>
+                                <label><input type="checkbox" value="17015">Оборотни </label>
+                                <label><input type="checkbox" value="5390">Игра на время </label>
+                                <label><input type="checkbox" value="1649">GameMaker </label>
+                                <label><input type="checkbox" value="776177">Панорамное видео </label>
+                                <label><input type="checkbox" value="10437">Викторина </label>
+                                <label><input type="checkbox" value="5382">Первая мировая война </label>
+                                <label><input type="checkbox" value="6041">Лошади </label>
+                                <label><input type="checkbox" value="4520">Фермерство </label>
+                                <label><input type="checkbox" value="5310">Games Workshop </label>
+                                <label><input type="checkbox" value="12190">Бокс </label>
+                                <label><input type="checkbox" value="150626">Об играх </label>
+                                <label><input type="checkbox" value="92092">Авиасимулятор </label>
+                                <label><input type="checkbox" value="15339">Документальный фильм </label>
+                                <label><input type="checkbox" value="4184">Шахматы </label>
+                                <label><input type="checkbox" value="4291">Космические корабли </label>
+                                <label><input type="checkbox" value="1100686">Симулятор эпидемии </label>
+                                <label><input type="checkbox" value="15954">Молчаливый главный герой </label>
+                                <label><input type="checkbox" value="1733">Суровая </label>
+                                <label><input type="checkbox" value="1100688">Медицинский симулятор </label>
+                                <label><input type="checkbox" value="1736">LEGO </label>
+                                <label><input type="checkbox" value="198913">Мотоциклы </label>
+                                <label><input type="checkbox" value="7038">Гольф </label>
+                                <label><input type="checkbox" value="71389">Правописание </label>
+                                <label><input type="checkbox" value="856791">Асимметричная VR </label>
+                                <label><input type="checkbox" value="6948">Рим </label>
+                                <label><input type="checkbox" value="19780">Подводная лодка </label>
+                                <label><input type="checkbox" value="922563">Рогалик метроидвания </label>
+                                <label><input type="checkbox" value="123332">Байки </label>
+                                <label><input type="checkbox" value="7113">Создана на пожертвования </label>
+                                <label><input type="checkbox" value="61357">Электронная музыка </label>
+                                <label><input type="checkbox" value="1746">Баскетбол </label>
+                                <label><input type="checkbox" value="6621">Пинбол </label>
+                                <label><input type="checkbox" value="29855">Эмбиент </label>
+                                <label><input type="checkbox" value="1254552">Американский футбол </label>
+                                <label><input type="checkbox" value="745697">Социальная дедукция </label>
+                                <label><input type="checkbox" value="189941">Инструментальная музыка </label>
+                                <label><input type="checkbox" value="8075">TrackIR </label>
+                                <label><input type="checkbox" value="22955">Мини гольф </label>
+                                <label><input type="checkbox" value="12286">Warhammer 40K </label>
+                                <label><input type="checkbox" value="1753">Скейтбординг </label>
+                                <label><input type="checkbox" value="47827">Реслинг </label>
+                                <label><input type="checkbox" value="337964">Рок музыка </label>
+                                <label><input type="checkbox" value="11634">Викинги </label>
+                                <label><input type="checkbox" value="3796">По мотивам книги </label>
+                                <label><input type="checkbox" value="17927">Бильярд </label>
+                                <label><input type="checkbox" value="42089">Скример </label>
+                                <label><input type="checkbox" value="5727">Бейсбол </label>
+                                <label><input type="checkbox" value="19568">Велосипеды </label>
+                                <label><input type="checkbox" value="96359">Катание </label>
+                                <label><input type="checkbox" value="5914">Теннис </label>
+                                <label><input type="checkbox" value="14906">Нарочито неудобное управление </label>
+                                <label><input type="checkbox" value="15868">Мотокросс </label>
+                                <label><input type="checkbox" value="11095">Boss Rush </label>
+                                <label><input type="checkbox" value="7328">Боулинг </label>
+                                <label><input type="checkbox" value="117648">8 битная музыка</label>
+                                <label><input type="checkbox" value="176733">Сочетание блоков </label>
+                                <label><input type="checkbox" value="17337">Лемминги </label>
+                                <label><input type="checkbox" value="324176">Хоккей </label>
+                                <label><input type="checkbox" value="348922">Steam Machine </label>
+                                <label><input type="checkbox" value="8461">Хорошо написанная </label>
+                                <label><input type="checkbox" value="5407">Бенчмарк </label>
+                                <label><input type="checkbox" value="35079">Симулятор работы </label>
+                                <label><input type="checkbox" value="28444">Сноубординг </label>
+                                <label><input type="checkbox" value="603297">Устройства </label>
+                                <label><input type="checkbox" value="252854">Веломотокросс </label>
+                                <label><input type="checkbox" value="129761">Квадроциклы </label>
+                                <label><input type="checkbox" value="7309">Лыжи </label>
+                                <label><input type="checkbox" value="143739">Электроника </label>
+                                <label><input type="checkbox" value="33572">Маджонг </label>
+                                <label><input type="checkbox" value="27758">Управление голосом </label>
+                                <label><input type="checkbox" value="233824">Полнометражный фильм </label>
+                                <label><input type="checkbox" value="323922">Мусоу </label>
+                                <label><input type="checkbox" value="91114">Работа в магазине </label>
+                                <label><input type="checkbox" value="49213">Регби </label>
+                                <label><input type="checkbox" value="30927">Лисицы </label>
+                                <label><input type="checkbox" value="847164">Волейбол </label>
+                                <label><input type="checkbox" value="6214">Птицы </label>
+                                <label><input type="checkbox" value="5941">Перезапуск </label>
+                                <label><input type="checkbox" value="42329">Кодинг </label>
+                                <label><input type="checkbox" value="158638">Крикет </label>
+                                <label><input type="checkbox" value="363767">Снукер </label>
+                                <label><input type="checkbox" value="1220528">Симулятор хобби </label>
+                               
+                            </div>
+                        </div>
                     </div>
                 <div id="Content_div"  class="Content_div"> 
                 </div>
