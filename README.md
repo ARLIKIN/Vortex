@@ -10,4 +10,4 @@
 Бибилиотека
 ![image](https://github.com/ARLIKIN/Vortex/assets/38999833/526f4d94-298e-4988-a565-e874ca163472)
 
-[Скачать Vortex 1.0.0 win](https://drive.google.com/file/d/13XFTe5SD6csv8Kt3JyF8UcnCnTnlNmLU/view?usp=sharing)
+
